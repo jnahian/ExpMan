@@ -13,57 +13,52 @@
     <link href="{{ asset("css/style.css") }}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-<nav class="cyan lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
-        <ul class="right hide-on-med-and-down">
-            @guest
-                <li>
-                    <a href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if (Route::has('register'))
+<div class="navbar-fixed">
+    <nav class="cyan lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
+            <ul class="right hide-on-med-and-down">
+                @guest
                     <li>
-                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a href="{{ route('login') }}">
+                            <i class="material-icons">lock_open</i>{{ __('Login') }}</a>
                     </li>
-                @endif
-            @else
-                <li>
-                    <a href="#">
-                        {{--<i class="material-icons">account_circle</i>--}}
-                        {{ Auth::user()->name }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                    @if (Route::has('register'))
+                        <li>
+                            <a href="{{ route('register') }}">
+                                <i class="material-icons">person_add</i>{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <li>
+                        <a href="#">
+                            <i class="material-icons">account_circle</i>
+                            {{ Auth::user()->name }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="material-icons">power_settings_new</i>
+                            {{ __('Logout') }}
+                        </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </li>
-            @endguest
-        </ul>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                @endguest
+            </ul>
 
-        <ul id="nav-mobile" class="sidenav">
-            <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
-<div class="section no-pad-bot" id="index-banner">
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+</div>
+<div class="section" id="index-banner">
     <div class="container">
-        <br><br>
-        <h1 class="header center green-text">{{ config('app.name', 'Laravel') }}</h1>
-        <div class="row center">
-            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
-        <div class="row center">
-            <a href="{{ route('login') }}" class="btn-large waves-effect waves-light orange">
-                <i class="material-icons">arrow_forward</i>
-                {{ __('Login') }}
-            </a>
-        </div>
-        <br><br>
+
+        @yield('content')
 
     </div>
 </div>
@@ -71,7 +66,7 @@
 <footer class="page-footer grey lighten-1">
     <div class="footer-copyright">
         <div class="container">
-            Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            Made by <a class="blue-text lighten-3" href="http://jnahian.com">jnahian</a>
         </div>
     </div>
 </footer>

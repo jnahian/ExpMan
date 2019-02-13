@@ -1,0 +1,45 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.material-icons {
+    display: inline;
+    float: left;
+}
+
+nav ul li .material-icons {
+    margin-right: 10px;
+}
+
+#index-banner {
+    min-height: calc(100vh - 134px);
+}
+
+.btn .material-icons, .btn-large .material-icons, .side-nav .material-icons {
+    margin-right: 10px;
+}
+
+.container {
+    width: 80%;
+}
+
+.side-nav li a {
+    display: block;
+    color: #333;
+}
+
+.side-nav li.active a, .side-nav li:hover a {
+    color: #43a047;
+}
