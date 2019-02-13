@@ -15,17 +15,17 @@
 <body>
 <div class="navbar-fixed">
     <nav class="cyan lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="{{ url('/') }}" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
             <ul class="right hide-on-med-and-down">
                 @guest
                     <li>
                         <a href="{{ route('login') }}">
-                            <i class="material-icons">lock_open</i>{{ __('Login') }}</a>
+                            <i class="material-icons">lock_open</i>সাইন ইন</a>
                     </li>
                     @if (Route::has('register'))
                         <li>
                             <a href="{{ route('register') }}">
-                                <i class="material-icons">person_add</i>{{ __('Register') }}</a>
+                                <i class="material-icons">person_add</i>রেজিস্ট্রেশন </a>
                         </li>
                     @endif
                 @else
@@ -38,7 +38,7 @@
                     <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="material-icons">power_settings_new</i>
-                            {{ __('Logout') }}
+                            সাইন আউট
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -65,8 +65,8 @@
 
 <footer class="page-footer grey lighten-1">
     <div class="footer-copyright">
-        <div class="container">
-            Made by <a class="blue-text lighten-3" href="http://jnahian.com">jnahian</a>
+        <div class="container center-align">
+            &copy; {{ bijoyToAvro(date('Y')) }} || <a class="blue-text lighten-3" href="http://jnahian.com">নাহিয়ান</a> এর ভালবাসা দিয়ে তৈরি
         </div>
     </div>
 </footer>

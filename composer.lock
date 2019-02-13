@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "c9349dd1a9cf96bd6a33bd670db42544",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1101,6 +1101,58 @@
                 "storage"
             ],
             "time": "2019-02-01T08:50:36+00:00"
+        },
+        {
+            "name": "mirazmac/bangla-string",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MirazMac/BanglaString.git",
+                "reference": "dcf106bc5ccfaf9d1d2ba6cbf3f3331428e75491"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MirazMac/BanglaString/zipball/dcf106bc5ccfaf9d1d2ba6cbf3f3331428e75491",
+                "reference": "dcf106bc5ccfaf9d1d2ba6cbf3f3331428e75491",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MirazMac\\BanglaString\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Miraz Mac",
+                    "email": "mirazmac@gmail.com",
+                    "homepage": "https://mirazmac.info",
+                    "role": "Original Author"
+                }
+            ],
+            "description": "A wannabe all-in-all Bangla String Manupulation Library!",
+            "homepage": "https://github.com/mirazmac/BanglaString",
+            "keywords": [
+                "Bangla",
+                "avro",
+                "avro to bijoy",
+                "bijoy",
+                "bijoy to avro",
+                "phonetic",
+                "string",
+                "unicode"
+            ],
+            "time": "2018-02-02T10:31:43+00:00"
         },
         {
             "name": "monolog/monolog",

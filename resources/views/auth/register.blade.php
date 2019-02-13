@@ -7,7 +7,7 @@
                 @csrf
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title">{{ __('Register') }}</span>
+                        <span class="card-title">রেজিস্ট্রেশন </span>
                         <hr>
                         <div class="row">
                             <div class="input-field col s6">
@@ -18,7 +18,7 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-                                <label for="email">{{ __('Name') }}:</label>
+                                <label for="name">সম্পূর্ণ নাম</label>
                             </div>
 
                             <div class="input-field col s6">
@@ -29,7 +29,7 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                                <label for="email">{{ __('E-Mail Address') }}:</label>
+                                <label for="email">ইমেইল এড্রেস:</label>
                             </div>
 
                         </div>
@@ -43,7 +43,7 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
-                                <label for="last_name">{{ __('Password') }}</label>
+                                <label for="last_name">পাসওয়ার্ড </label>
                             </div>
 
                             <div class="input-field col s6">
@@ -54,14 +54,14 @@
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
                                 @endif
-                                <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                                <label for="password-confirm">পাসওয়ার্ড নিশ্চিত করুন</label>
                             </div>
                         </div>
                     </div>
                     <div class="card-action">
                         <button type="submit" class="btn green">
                             <i class="material-icons">person_add</i>
-                            {{ __('Register') }}
+                            রেজিস্ট্রেশন
                         </button>
                     </div>
                 </div>

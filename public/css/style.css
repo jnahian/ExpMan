@@ -5,6 +5,11 @@
  *
  * Made By MaterializeCSS.com
  */
+@import url('https://fonts.maateen.me/adorsho-lipi/font.css');
+
+body {
+    font-family: sans-serif, 'AdorshoLipi';
+}
 
 .icon-block {
     padding: 0 15px;
@@ -24,7 +29,7 @@ nav ul li .material-icons {
 }
 
 #index-banner {
-    min-height: calc(100vh - 134px);
+    min-height: calc(100vh - 114px);
 }
 
 .btn .material-icons, .btn-large .material-icons, .side-nav .material-icons {
@@ -42,4 +47,8 @@ nav ul li .material-icons {
 
 .side-nav li.active a, .side-nav li:hover a {
     color: #43a047;
+}
+
+.page-footer {
+    padding-top: 0;
 }
