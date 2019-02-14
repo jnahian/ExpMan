@@ -21,6 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view( 'home' );
+        $title = "ড্যাশবোর্ড";
+        return view( 'home', compact( 'title' ) );
     }
 }

@@ -11,6 +11,20 @@ body {
     font-family: sans-serif, 'AdorshoLipi';
 }
 
+* {
+    outline: 0 !important;
+}
+
+.brand-logo {
+    display: flex !important;
+    align-items: center;
+}
+
+.brand-logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
 .icon-block {
     padding: 0 15px;
 }
@@ -52,3 +66,90 @@ nav ul li .material-icons {
 .page-footer {
     padding-top: 0;
 }
+
+.card .card-content .card-title {
+    margin-bottom: 20px;
+}
+
+.row {
+    margin-bottom: 10px !important;
+}
+
+.progress {
+    margin: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    position: absolute;
+    z-index: 9;
+    display: none;
+}
+
+.progress .determinate {
+    background-color: #e65100;
+}
+
+.card {
+    position: relative;
+}
+
+.pre-loader {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #eeeeeed9;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: ease-in-out .3s all;
+    -moz-transition: ease-in-out .3s all;
+    -ms-transition: ease-in-out .3s all;
+    -o-transition: ease-in-out .3s all;
+    transition: ease-in-out .3s all;
+}
+
+.pre-loader.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* label color */
+.input-field label {
+    color: #0097a7;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #0097a7;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #0097a7;
+    box-shadow: 0 1px 0 0 #0097a7;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+/* invalid color */
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #ff5722;
+    box-shadow: 0 1px 0 0 #ff5722;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #000;
+}
+
+.toast
+
+/*wget --limit-rate=200k --no-clobber --convert-links --random-wait -r -p -E -e robots=off -U mozilla http://www.kossboss.com*/

@@ -5,7 +5,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ isset($title) ? "$title :: " : ""  }} {{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" href="{{ asset("svg/expensive.svg") }}">
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,8 +15,16 @@
 </head>
 <body>
 <div class="navbar-fixed">
+    <div class="progress">
+        <div class="determinate" style="width: 0"></div>
+    </div>
     <nav class="cyan lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="{{ url('/') }}" class="brand-logo">{{ config('app.name', 'Laravel') }}</a>
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="{{ url('/') }}" class="brand-logo">
+                <img src="{{ asset("svg/expensive.svg") }}" alt="{{ config('app.name', 'Laravel') }}">
+                {{ config('app.name', 'Laravel') }}
+            </a>
+
             <ul class="right hide-on-med-and-down">
                 @guest
                     <li>
@@ -55,7 +64,7 @@
         </div>
     </nav>
 </div>
-<div class="section" id="index-banner">
+<div class="section cyan lighten-5" id="index-banner">
     <div class="container">
 
         @yield('content')
@@ -76,6 +85,9 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{{ asset("js/materialize.js") }}"></script>
 <script src="{{ asset("js/init.js") }}"></script>
+<script src="{{ asset("js/submitter.js") }}"></script>
+
+@stack('page-js')
 
 </body>
 </html>

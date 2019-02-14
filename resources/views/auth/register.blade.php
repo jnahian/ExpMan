@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title">রেজিস্ট্রেশন </span>
-                        <hr>
+
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="name" type="text" class="validate {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>

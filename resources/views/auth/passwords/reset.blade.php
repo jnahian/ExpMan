@@ -8,7 +8,6 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">পাসওয়ার্ড রিসেট করুন</div>
-                        <hr>
 
 
                         <input type="hidden" name="token" value="{{ $token }}">

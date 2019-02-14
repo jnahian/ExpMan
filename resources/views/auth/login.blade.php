@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title">সাইন ইন</span>
-                        <hr>
+
 
                         <div class="row">
                             <div class="input-field col s6">

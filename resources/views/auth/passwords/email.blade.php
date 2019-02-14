@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">পাসওয়ার্ড রিসেট করুন</div>
-                        <hr>
+
 
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
