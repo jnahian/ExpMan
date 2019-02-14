@@ -17,9 +17,11 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        //
+        $title   = "আয় সমূহ";
+        $incomes = Income::paginate( 15 );
+        return view( 'income.index', compact( 'title', 'incomes' ) );
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -30,7 +32,7 @@ class IncomeController extends Controller
         $title = "নতুন আয় যোগ করুন";
         return view( 'income.create', compact( 'title' ) );
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -39,28 +41,28 @@ class IncomeController extends Controller
      */
     public function store( Request $request )
     {
-        $response = [ 'success' => false, 'msg' => '' ];
+        $response = ['success' => FALSE, 'msg' => ''];
         $request->validate( [
-            'date'   => 'required',
-            'source' => 'required',
-            'amount' => 'required|numeric',
-        ] );
-
-        $income = new Income();
-        $income->uuid = Uuid::uuid4();
+                                'date'   => 'required',
+                                'source' => 'required',
+                                'amount' => 'required|numeric',
+                            ] );
+        
+        $income          = new Income();
+        $income->uuid    = Uuid::uuid4();
         $income->user_id = Auth::user()->id;
-        $income->date = Carbon::parse( $request->date )->toDateTimeString();
-        $income->source = $request->source;
-        $income->amount = $request->amount;
+        $income->date    = Carbon::parse( $request->date )->toDateTimeString();
+        $income->source  = $request->source;
+        $income->amount  = $request->amount;
         $income->remarks = $request->remarks;
-        $income->status = 1;
+        $income->status  = 1;
         $income->save();
-
-        $response['success'] = true;
-        $response['msg'] = "Income Saved Successfully!";
+        
+        $response['success'] = TRUE;
+        $response['msg']     = "Income Saved Successfully!";
         return response()->json( $response );
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -71,7 +73,7 @@ class IncomeController extends Controller
     {
         //
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -82,19 +84,19 @@ class IncomeController extends Controller
     {
         //
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\Income $income
+     * @param  \App\Income              $income
      * @return \Illuminate\Http\Response
      */
     public function update( Request $request, Income $income )
     {
         //
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *

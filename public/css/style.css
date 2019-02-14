@@ -150,6 +150,10 @@ nav ul li .material-icons {
     color: #000;
 }
 
-.toast
+.btn-floating.btn-small > .material-icons {
+    display: inline-block;
+    margin-top: 4px;
+    float: none;
+}
 
 /*wget --limit-rate=200k --no-clobber --convert-links --random-wait -r -p -E -e robots=off -U mozilla http://www.kossboss.com*/
