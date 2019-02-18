@@ -11,6 +11,21 @@
                 @include('elements.preloader')
                 <div class="card-title">{{ $title }}</div>
                 <div class="card-content">
+                    <div class="row center-align">
+                        {!! Form::open(['route' => 'income.index', 'method' => 'GET']) !!}
+                        <div class="input-field inline">
+                            <input id="from" name="from" type="text" class="datepicker">
+                            <label for="from">তারিখ হইতে </label>
+                        </div>
+                        <div class="input-field inline">
+                            <input id="to" type="text" name="to" class="datepicker">
+                            <label for="to">তারিখ পর্যন্ত </label>
+                        </div>
+                        <div class="input-field inline">
+                            <button type="submit" name="s" value="1" class="btn-flat green-text search-btn"><span class="material-icons">search</span></button>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
                     <table class="striped responsive">
                         <thead>
                         <tr>

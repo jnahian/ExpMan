@@ -49,15 +49,22 @@
                             {{ Auth::user()->name }}
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <li class="logout-wrap">
+                        <a href="javascript:" onclick="jLogoutConfirm(this)"> {{-- event.preventDefault(); document.getElementById('logout-form').submit(); --}}
                             <i class="material-icons">power_settings_new</i>
                             সাইন আউট
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                        <div class="confirm-logout" onclick="jLogoutCancel(this)">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <h3>আপনি সাইন আউট করতে চাচ্ছেন, আপনি কি নিশ্চিত?</h3>
+                                <button type="submit" class="btn orange darken-3"><span class="material-icons">power_settings_new</span> সাইন আউট</button>
+                                <button type="button" class="btn grey" onclick="jLogoutCancel(this)"><span class="material-icons">close</span> বাদ দিন</button>
+                            </form>
+                        </div>
+
+
                     </li>
                 @endguest
             </ul>

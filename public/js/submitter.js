@@ -139,6 +139,18 @@ function jCancelDelete(t) {
     }
 }
 
+function jLogoutConfirm(t) {
+    var target = $(t).parents('.logout-wrap').find('.confirm-logout');
+    $(target).addClass('show');
+}
+
+function jLogoutCancel(t) {
+    var target = $(t).parents('.logout-wrap').find('.confirm-logout');
+    if (target.hasClass('show')) {
+        target.removeClass('show');
+    }
+}
+
 /**
  * Redirect to given url
  * @param $url

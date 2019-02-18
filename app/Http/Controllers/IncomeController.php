@@ -15,10 +15,24 @@ class IncomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request )
     {
         $title = "সকল আয়";
-        $incomes = Income::paginate( 15 );
+        $incomes = new Income();
+
+        if ( $request->s ) {
+            if ( $request->from ) {
+                $from = Carbon::parse( $request->from )->toDateString();
+                $incomes = $incomes->where( 'date', '>=', $from );
+            }
+            if ( $request->to ) {
+                $to = Carbon::parse( $request->to )->toDateString();
+                $incomes = $incomes->where( 'date', '<=', $to );
+            }
+        }
+
+        $incomes = $incomes->paginate( 15 );
+
         return view( 'income.index', compact( 'title', 'incomes' ) );
     }
 
