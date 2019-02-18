@@ -63,8 +63,6 @@
                                 <button type="button" class="btn grey" onclick="jLogoutCancel(this)"><span class="material-icons">close</span> বাদ দিন</button>
                             </form>
                         </div>
-
-
                     </li>
                 @endguest
             </ul>
