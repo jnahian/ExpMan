@@ -39,7 +39,12 @@
                     @endif
                 @else
                     <li>
-                        <a href="#">
+                        <a href="{{ url()->previous() }}" class="tooltipped" data-position="left" data-tooltip="পূর্ববর্তী পাতা">
+                            <i class="material-icons">arrow_back</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:">
                             <i class="material-icons">account_circle</i>
                             {{ Auth::user()->name }}
                         </a>

@@ -62,6 +62,10 @@ submit_form = function (t, e) {
 
                 jNotify(ret.msg, type);
 
+                if (ret.redirect != undefined && ret.redirect) {
+                    redirect(ret.redirect);
+                }
+
                 /*swal({
                     type: type,
                     title: title,
@@ -123,6 +127,18 @@ function jNotify(msg, type) {
     });
 }
 
+function jShowDelete(t) {
+    var target = $(t).parents('.delete-wrap').find('.delete-form');
+    $(target).addClass('show');
+}
+
+function jCancelDelete(t) {
+    var target = $(t).parents('.delete-wrap').find('.delete-form');
+    if (target.hasClass('show')) {
+        target.removeClass('show');
+    }
+}
+
 /**
  * Redirect to given url
  * @param $url
@@ -130,8 +146,8 @@ function jNotify(msg, type) {
  */
 function redirect($url) {
     setTimeout(function () {
-        window.location.replace(BASE_URL + $url);
-    }, 200);
+        window.location.replace($url);
+    }, 500);
     return true;
 }
 
