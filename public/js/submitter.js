@@ -140,12 +140,11 @@ function jCancelDelete(t) {
 }
 
 function jLogoutConfirm(t) {
-    var target = $(t).parents('.logout-wrap').find('.confirm-logout');
-    $(target).addClass('show');
+    $('.confirm-logout').addClass('show');
 }
 
 function jLogoutCancel(t) {
-    var target = $(t).parents('.logout-wrap').find('.confirm-logout');
+    var target = $('.confirm-logout');
     if (target.hasClass('show')) {
         target.removeClass('show');
     }

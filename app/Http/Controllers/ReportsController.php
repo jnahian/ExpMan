@@ -18,7 +18,7 @@ class ReportsController extends Controller
 
     public function daily_income_expense( Request $request )
     {
-        $title = "প্রতিদিনের আয় / ব্যায়";
+        $title = "প্রতিদিনের আয় / ব্যায়";
         $incomes = $this->getDailyIncomeReport( $request );
         $expenses = $this->getDailyExpanseReport( $request );
         return view( 'reports.daily-income-expense', compact( 'title', 'incomes', 'expenses' ) );
@@ -26,7 +26,7 @@ class ReportsController extends Controller
 
     public function monthly_income_expense( Request $request )
     {
-        $title = "মাসিক আয় / ব্যায়";
+        $title = "মাসিক আয় / ব্যায়";
 
         $reports = '';
 

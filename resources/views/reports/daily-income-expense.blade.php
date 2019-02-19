@@ -5,7 +5,7 @@
 
         @include('elements.sideNav')
 
-        <div class="col m10">
+        <div class="col m10 s12">
 
             <div class="card">
                 @php
@@ -13,10 +13,10 @@
                     $total_expense = 0;
                 @endphp
                 @include('elements.preloader')
-                <div class="card-title">
-                    {{ $title }}
-                </div>
                 <div class="card-content">
+                    <div class="card-title">
+                        {{ $title }}
+                    </div>
                     <div class="row center-align">
                         {!! Form::open(['route' => 'report.daily', 'method' => 'GET']) !!}
                         <div class="input-field inline">
@@ -36,10 +36,10 @@
                     @if($incomes || $expenses)
                         <div class="row report">
                             <div class="col m6">
-                                <table class="striped responsive">
+                                <table class="striped responsive-table">
                                     <thead>
                                     <tr>
-                                        <th colspan="4" class="center-align green lighten-3">আয়</th>
+                                        <th colspan="4" class="center-align green lighten-3">আয়</th>
                                     </tr>
                                     <tr>
                                         <th>#</th>
@@ -64,7 +64,7 @@
                                         @endforeach
 
                                         <tr>
-                                            <th colspan="3" class="right-align">মোট আয় =</th>
+                                            <th colspan="3" class="right-align">মোট আয় =</th>
                                             <th class="right-align">{{ number_format($total_income, 2) }}</th>
                                         </tr>
                                     @else
@@ -76,7 +76,7 @@
                                 </table>
                             </div>
                             <div class="col m6">
-                                <table class="striped responsive">
+                                <table class="striped responsive-table">
                                     <thead>
                                     <tr>
                                         <th colspan="4" class="red lighten-3 center-align">ব্যায়</th>

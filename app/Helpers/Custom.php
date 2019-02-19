@@ -51,7 +51,7 @@ if ( !function_exists( 'income_expense' ) ) {
     function income_expense( $val = NULL, $badge = false )
     {
         $data = [
-            "I" => "আয়",
+            "I" => "আয়",
             "E" => "ব্যায়"
         ];
 

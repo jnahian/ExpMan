@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col s8 offset-s2">
+        <div class="col m8 offset-m2 s12">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="card">
@@ -11,7 +11,7 @@
 
 
                         <div class="row">
-                            <div class="input-field col s6">
+                            <div class="input-field col m6 s12">
                                 <input id="email" type="email" class="validate {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
@@ -21,7 +21,7 @@
                                 @endif
                                 <label for="email">ইমেইল এড্রেস</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col m6 s12">
                                 <input id="password" type="password" class="validate {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -47,8 +47,8 @@
                         </button>
 
                         @if (Route::has('password.request'))
-                            <a class="btn- right" href="{{ route('password.request') }}">
-                                আপনি কি পাসওয়ার্ড ভুলে গেছেন?
+                            <a class="btn orange right" href="{{ route('password.request') }}">
+                                পাসওয়ার্ড ভুলে গেছেন?
                             </a>
                         @endif
                     </div>

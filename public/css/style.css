@@ -301,4 +301,51 @@ td, th {
     font-size: 12px;
 }
 
+#columnchart_material, #curve_chart {
+    height: 400px;
+}
+
+.card .card-title {
+    font-size: 18px;
+    color: #333;
+}
+
+.welcome {
+    margin-top: 35vh;
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: auto;
+    }
+
+    nav .brand-logo {
+        font-size: 1.7rem;
+    }
+
+    .sidenav-overlay {
+        z-index: 995;
+    }
+
+    .confirm-logout form {
+        width: 90%;
+    }
+
+    .confirm-logout form button[type=submit] {
+        margin-right: 10px;
+    }
+
+    #index-banner {
+        min-height: calc(100vh - 106px);
+    }
+
+    #columnchart_material, #curve_chart {
+        height: auto;
+    }
+
+    .welcome {
+        margin-top: 20vh;
+    }
+}
+
 /*wget --limit-rate=200k --no-clobber --convert-links --random-wait -r -p -E -e robots=off -U mozilla http://www.kossboss.com*/

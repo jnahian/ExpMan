@@ -5,13 +5,13 @@
 
         @include('elements.sideNav')
 
-        <div class="col m10">
+        <div class="col m10 s12">
 
             <div class="card">
                 @include('elements.preloader')
-                <div class="card-title">{{ $title }}</div>
                 <div class="card-content">
-                    <table class="striped responsive">
+                    <div class="card-title">{{ $title }}</div>
+                    <table class="striped responsive-table">
                         <tbody>
                         <tr>
                             <th width="20%">তারিখ</th>

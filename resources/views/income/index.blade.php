@@ -5,15 +5,15 @@
 
         @include('elements.sideNav')
 
-        <div class="col m10">
+        <div class="col m10 s12">
 
             <div class="card">
                 @include('elements.preloader')
-                <div class="card-title">
-                    {{ $title }}
-                    <a href="{{ route('income.create') }}" class="btn-small green right"><i class="material-icons">add</i> নতুন আয় </a>
-                </div>
                 <div class="card-content">
+                    <div class="card-title">
+                        {{ $title }}
+                        <a href="{{ route('income.create') }}" class="btn-small green right"><i class="material-icons">add</i> নতুন আয় </a>
+                    </div>
                     <div class="row center-align">
                         {!! Form::open(['route' => 'income.index', 'method' => 'GET']) !!}
                         <div class="input-field inline">
@@ -29,7 +29,7 @@
                         </div>
                         {!! Form::close() !!}
                     </div>
-                    <table class="striped responsive">
+                    <table class="striped responsive-table">
                         <thead>
                         <tr>
                             <th>#</th>

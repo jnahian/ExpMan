@@ -1,4 +1,4 @@
-<div class="col m2">
+<div class="col m2 s12 hide-on-small-and-down">
     <ul class="collection side-nav">
         <li class="collection-item"><a href="{{ route('home') }}"><i class="material-icons">dashboard</i> ড্যাশবোর্ড</a></li>
         <li class="collection-item"><a href="{{ route('income.create') }}"><i class="material-icons">add</i> নতুন আয় </a></li>

@@ -5,13 +5,13 @@
 
         @include('elements.sideNav')
 
-        <div class="col m10">
+        <div class="col m10 s12">
 
             <div class="card">
                 @include('elements.preloader')
-                <div class="card-title">{{ $title }}</div>
                 <div class="card-content">
-                    <table class="striped responsive">
+                    <div class="card-title">{{ $title }}</div>
+                    <table class="striped responsive-table">
                         <tbody>
                         <tr>
                             <th width="20%">তারিখ</th>
@@ -53,9 +53,9 @@
                 </div>
                 <div class="card-action right-align delete-wrap">
                     <a href="{{ route('income.index') }}" class="btn-small waves-effect waves-light green tooltipped" data-position="top"
-                       data-tooltip="সকল আয় ">
+                       data-tooltip="সকল আয় ">
                         <span class="material-icons">list</span>
-                        সকল আয়
+                        সকল আয়
                     </a>
                     <a href="{{ route('income.edit', $income->uuid) }}" class="btn-small waves-effect waves-light cyan tooltipped" data-position="top"
                        data-tooltip="পরিবর্তন করুন">

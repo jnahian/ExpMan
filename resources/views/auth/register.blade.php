@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col s8 offset-s2">
+        <div class="col m8 offset-m2 s12">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="card">
@@ -10,7 +10,7 @@
                         <span class="card-title">রেজিস্ট্রেশন </span>
 
                         <div class="row">
-                            <div class="input-field col s6">
+                            <div class="input-field col m6 s12">
                                 <input id="name" type="text" class="validate {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
@@ -21,7 +21,7 @@
                                 <label for="name">সম্পূর্ণ নাম</label>
                             </div>
 
-                            <div class="input-field col s6">
+                            <div class="input-field col m6 s12">
                                 <input id="email" type="email" class="validate {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
@@ -35,7 +35,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="input-field col s6">
+                            <div class="input-field col m6 s12">
                                 <input id="password" type="password" class="validate {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -46,7 +46,7 @@
                                 <label for="last_name">পাসওয়ার্ড </label>
                             </div>
 
-                            <div class="input-field col s6">
+                            <div class="input-field col m6 s12">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
 
                                 @if ($errors->has('password_confirmation'))

@@ -5,15 +5,15 @@
 
         @include('elements.sideNav')
 
-        <div class="col s10">
+        <div class="col m10 s12">
             <div class="card">
                 <div class="card-content">
-                    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+                    <div id="columnchart_material"></div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <div id="curve_chart" style="width: 100%; height: 500px"></div>
+                    <div id="curve_chart"></div>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
     <script>
         var barData = [];
 
-        barData.push(['মাস', 'আয়', 'ব্যায়', 'ব্যালেন্স']);
+        barData.push(['মাস', 'আয়', 'ব্যায়', 'ব্যালেন্স']);
 
         @foreach($reports as $report)
 
@@ -61,8 +61,8 @@
 
             var options = {
                 chart: {
-                    title: 'মাসিক আয় ব্যায়ের হিসাব ',
-                    subtitle: 'আয়, ব্যায়, ব্যালেন্স',
+                    title: 'মাসিক আয় ব্যায়ের হিসাব ',
+                    subtitle: 'আয়, ব্যায়, ব্যালেন্স',
                 }
             };
 

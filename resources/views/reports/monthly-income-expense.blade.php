@@ -5,7 +5,7 @@
 
         @include('elements.sideNav')
 
-        <div class="col m10">
+        <div class="col m10 s12">
 
             <div class="card">
                 @php
@@ -13,10 +13,10 @@
                     $total_expense = 0;
                 @endphp
                 @include('elements.preloader')
-                <div class="card-title">
-                    {{ $title }}
-                </div>
                 <div class="card-content">
+                    <div class="card-title">
+                        {{ $title }}
+                    </div>
                     <div class="row center-align">
                         {!! Form::open(['route' => 'report.monthly', 'method' => 'GET']) !!}
                         <div class="input-field inline">
@@ -36,13 +36,13 @@
 
                     @if($reports)
                         <div class="report">
-                            <table class="striped responsive">
+                            <table class="striped responsive-table">
                                 <thead>
                                 <tr class="green lighten-3">
                                     <th>#</th>
                                     <th width="12%">তারিখ</th>
                                     <th>আয়ের উৎস/ব্যয়ের খাত</th>
-                                    <th class="center-align" width="8%">আয়/ব্যায়</th>
+                                    <th class="center-align" width="8%">আয়/ব্যায়</th>
                                     <th width="15%" class="right-align">আয়ের পরিমাণ</th>
                                     <th width="15%" class="right-align">ব্যায়ের পরিমাণ</th>
                                 </tr>

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col s8 offset-s2">
+        <div class="col m8 offset-m2 s12">
             <form method="POST" action="{{ route('password.update') }}">
                 @csrf
                 <div class="card">

@@ -5,23 +5,23 @@
 
         @include('elements.sideNav')
 
-        <div class="col m10">
+        <div class="col m10 s12">
 
             <div class="card">
                 @include('elements.preloader')
-                <div class="card-title">
-                    {{ $title }}
-                </div>
                 <div class="card-content center-align">
+                    <div class="card-title">
+                        {{ $title }}
+                    </div>
 
                     <a href="{{ route('report.daily') }}" class="btn-large light-blue">
                         <span class="material-icons">assignment</span>
-                        প্রতিদিনের আয় / ব্যায় রিপোর্ট
+                        প্রতিদিনের আয় / ব্যায় রিপোর্ট
                     </a>
 
                     <a href="{{ route('report.monthly') }}" class="btn-large light-blue">
                         <span class="material-icons">assignment</span>
-                        মাসিক আয় / ব্যায় রিপোর্ট
+                        মাসিক আয় / ব্যায় রিপোর্ট
                     </a>
 
                 </div>
