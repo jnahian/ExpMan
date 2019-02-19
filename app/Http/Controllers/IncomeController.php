@@ -30,8 +30,8 @@ class IncomeController extends Controller
                 $incomes = $incomes->where( 'date', '<=', $to );
             }
         }
-
-        $incomes = $incomes->paginate( 15 );
+        $incomes = $incomes->orderByDesc( "date" );
+        $incomes = $incomes->paginate( 15 )->appends( $request->all() );
 
         return view( 'income.index', compact( 'title', 'incomes' ) );
     }
@@ -111,7 +111,7 @@ class IncomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\Income $income
+     * @param  \App\Income              $income
      * @return \Illuminate\Http\Response
      */
     public function update( Request $request, Income $income )

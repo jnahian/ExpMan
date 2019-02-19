@@ -82,10 +82,10 @@
     </div>
 </div>
 
-<footer class="page-footer grey lighten-1">
+<footer class="page-footer grey lighten-3">
     <div class="footer-copyright">
-        <div class="container center-align">
-            &copy; {{ bijoyToAvro(date('Y')) }} || <a class="blue-text lighten-3" href="http://jnahian.com">নাহিয়ান</a> এর ভালবাসা দিয়ে তৈরি
+        <div class="container center-align black-text">
+            {{ bijoyToAvro(date('Y')) }} &copy; <a class="blue-text lighten-2" href="http://jnahian.com">নাহিয়ান</a>
         </div>
     </div>
 </footer>

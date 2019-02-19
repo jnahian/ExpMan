@@ -84,7 +84,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="card-action">
+                <div class="card-action center-align">
                     {{ $incomes->links() }}
                 </div>
             </div>

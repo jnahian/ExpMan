@@ -277,4 +277,18 @@ nav ul li .material-icons {
     width: 120px;
 }
 
+.pagination li > a {
+    margin-right: 0 !important;
+    color: #26c6da !important;
+}
+
+.pagination li.active > a {
+    color: #FFF !important;
+    background: #26c6da;
+}
+
+.pagination li.disabled > a {
+    color: #999 !important;
+}
+
 /*wget --limit-rate=200k --no-clobber --convert-links --random-wait -r -p -E -e robots=off -U mozilla http://www.kossboss.com*/
