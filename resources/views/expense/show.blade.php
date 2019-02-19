@@ -83,11 +83,6 @@
 
 @push('page-js')
     <script>
-        $(document).ready(function () {
-            $('.datepicker').datepicker({
-                autoClose: true,
-            });
-            $('.tooltipped').tooltip();
-        });
+
     </script>
 @endpush

@@ -5,6 +5,6 @@
         <li class="collection-item"><a href="{{ route('income.index') }}"><i class="material-icons">attach_money</i> আয় সমূহ </a></li>
         <li class="collection-item"><a href="{{ route('expense.create') }}"><i class="material-icons">add</i>নতুন ব্যয়</a></li>
         <li class="collection-item"><a href="{{ route('expense.index') }}"><i class="material-icons">money_off</i> সকল ব্যায় </a></li>
-        <li class="collection-item"><a href="#!"><i class="material-icons">assignment</i> রিপোর্টস</a></li>
+        <li class="collection-item"><a href="{{ route('report.index') }}"><i class="material-icons">assignment</i> রিপোর্টস</a></li>
     </ul>
 </div>
