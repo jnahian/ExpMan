@@ -16,12 +16,12 @@
 
                     <a href="{{ route('report.daily') }}" class="btn-large light-blue">
                         <span class="material-icons">assignment</span>
-                        Daily Report
+                        প্রতিদিনের আয় / ব্যায় রিপোর্ট
                     </a>
 
                     <a href="{{ route('report.monthly') }}" class="btn-large light-blue">
                         <span class="material-icons">assignment</span>
-                        Monthly Report
+                        মাসিক আয় / ব্যায় রিপোর্ট
                     </a>
 
                 </div>

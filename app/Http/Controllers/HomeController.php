@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Reports;
+
 class HomeController extends Controller
 {
     /**
@@ -22,6 +24,16 @@ class HomeController extends Controller
     public function index()
     {
         $title = "ড্যাশবোর্ড";
-        return view( 'home', compact( 'title' ) );
+
+        $reports = Reports::select( 'month' )
+            ->selectRaw( "if(isnull(sum(income)) , 0, sum(income)) income" )
+            ->selectRaw( "if(isnull(sum(expense)) , 0, sum(expense)) expense" )
+            ->selectRaw( "(if(isnull(sum(income)) , 0, sum(income)) - if(isnull(sum(expense)) , 0, sum(expense))) profit" )
+            ->where( 'year', date( 'Y' ) )
+            ->groupBy( 'month' )->get();
+
+        $reports = $reports->toArray();
+
+        return view( 'home', compact( 'title', 'reports' ) );
     }
 }
