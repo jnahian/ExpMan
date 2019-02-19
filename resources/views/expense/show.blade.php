@@ -16,48 +16,47 @@
                         <tr>
                             <th width="20%">তারিখ</th>
                             <th width="20px">:</th>
-                            <td>{{ $income->date->format('d M, Y') }}</td>
+                            <td>{{ $expense->date->format('d M, Y') }}</td>
                         </tr>
                         <tr>
-                            <th>আয়ের উৎস</th>
+                            <th>ব্যয়ের খাত</th>
                             <th>:</th>
-                            <td>{{ $income->source }}</td>
+                            <td>{{ $expense->purpose }}</td>
                         </tr>
                         <tr>
-                            <th>আয়ের পরিমাণ</th>
+                            <th>ব্যায়ের পরিমাণ</th>
                             <th>:</th>
-                            <td>{{ $income->amount }}</td>
+                            <td>{{ $expense->amount }}</td>
                         </tr>
                         <tr>
                             <th>মন্তব্য</th>
                             <th>:</th>
-                            <td>{{ $income->remarks }}</td>
+                            <td>{{ $expense->remarks }}</td>
                         </tr>
                         <tr>
                             <th>স্টেটাস</th>
                             <th>:</th>
-                            <td>{!! status($income->status, TRUE) !!}</td>
+                            <td>{!! status($expense->status, TRUE) !!}</td>
                         </tr>
                         <tr>
                             <th width="15%">যোগ করার সময়</th>
                             <th width="20px">:</th>
-                            <td>{{ $income->created_at->format('d M, Y h:i A') }}</td>
+                            <td>{{ $expense->created_at->format('d M, Y h:i A') }}</td>
                         </tr>
                         <tr>
                             <th width="15%">আপডেট করার সময়</th>
                             <th width="20px">:</th>
-                            <td>{{ $income->updated_at->format('d M, Y h:i A') }}</td>
+                            <td>{{ $expense->updated_at->format('d M, Y h:i A') }}</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="card-action right-align delete-wrap">
-                    <a href="{{ route('income.index') }}" class="btn-small waves-effect waves-light green tooltipped" data-position="top"
-                       data-tooltip="সকল আয় ">
+                    <a href="{{ route('expense.index') }}" class="btn-small waves-effect waves-light green tooltipped" data-position="top"
+                       data-tooltip="সকল ব্যায়">
                         <span class="material-icons">list</span>
-                        সকল আয়
-                    </a>
-                    <a href="{{ route('income.edit', $income->uuid) }}" class="btn-small waves-effect waves-light cyan tooltipped" data-position="top"
+                        সকল ব্যায়</a>
+                    <a href="{{ route('expense.edit', $expense->uuid) }}" class="btn-small waves-effect waves-light cyan tooltipped" data-position="top"
                        data-tooltip="পরিবর্তন করুন">
                         <span class="material-icons">edit</span>
                         পরিবর্তন করুন
@@ -70,7 +69,7 @@
                     </a>
 
                     <div class="delete-form" onclick="jCancelDelete(this)">
-                        {!! Form::open(['route' => ['income.destroy', $income->uuid], 'method' => 'DELETE']) !!}
+                        {!! Form::open(['route' => ['expense.destroy', $expense->uuid], 'method' => 'DELETE']) !!}
                         <h3>আপনি এটি মুছে ফেলতে চাচ্ছেন, আপনি কি নিশ্চিত?</h3>
                         <button type="submit" class="btn red darken-3" onclick="submit_form(this, event)"><span class="material-icons">delete</span> মুছে ফেলুন</button>
                         <button type="button" class="btn grey" onclick="jCancelDelete(this)"><span class="material-icons">close</span>বাদ দিন</button>

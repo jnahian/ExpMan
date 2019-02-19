@@ -68,10 +68,9 @@ nav ul li .material-icons {
 }
 
 .card > .card-title {
-    margin-bottom: 10px;
     padding: 5px 20px;
-    background: #4bc6da;
-    color: #fff;
+    background: #4bc6da33;
+    color: #26c6da;
 }
 
 .row {
@@ -156,7 +155,8 @@ nav ul li .material-icons {
 .btn-floating.btn-small > .material-icons {
     display: inline-block;
     float: none;
-    margin-left: 4px;
+    margin-left: 7px;
+    font-size: 20px;
 }
 
 .btn-floating.btn-small {
@@ -164,7 +164,7 @@ nav ul li .material-icons {
 }
 
 
-.card-action .btn-small > .material-icons {
+.btn-small > .material-icons {
     margin-right: 10px;
 }
 
@@ -289,6 +289,10 @@ nav ul li .material-icons {
 
 .pagination li.disabled > a {
     color: #999 !important;
+}
+
+td, th {
+    padding: 10px 5px;
 }
 
 /*wget --limit-rate=200k --no-clobber --convert-links --random-wait -r -p -E -e robots=off -U mozilla http://www.kossboss.com*/

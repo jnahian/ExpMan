@@ -11,11 +11,11 @@
                 @include('elements.preloader')
                 <div class="card-title">
                     {{ $title }}
-                    <a href="{{ route('income.create') }}" class="btn-small green right"><i class="material-icons">add</i> নতুন আয় </a>
+                    <a href="{{ route('expense.create') }}" class="btn-small green right"><i class="material-icons">add</i>নতুন ব্যয়</a>
                 </div>
                 <div class="card-content">
                     <div class="row center-align">
-                        {!! Form::open(['route' => 'income.index', 'method' => 'GET']) !!}
+                        {!! Form::open(['route' => 'expense.index', 'method' => 'GET']) !!}
                         <div class="input-field inline">
                             <input id="from" name="from" type="text" class="datepicker">
                             <label for="from">তারিখ হইতে </label>
@@ -34,32 +34,32 @@
                         <tr>
                             <th>#</th>
                             <th>তারিখ</th>
-                            <th>আয়ের উৎস</th>
-                            <th>আয়ের পরিমাণ</th>
+                            <th>ব্যয়ের খাত</th>
+                            <th>ব্যায়ের পরিমাণ</th>
                             <th class="center-align">স্টেটাস</th>
                             <th class="center-align">সর্বশেষ আপডেট</th>
                             <th class="center-align">একশন্স</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @if($incomes->total())
-                            @foreach($incomes as $income)
+                        @if($expenses->total())
+                            @foreach($expenses as $expense)
                                 <tr>
                                     <td>{{ ($loop->index + 1) }}</td>
-                                    <td>{{ $income->date->format('d M, Y') }}</td>
-                                    <td>{{ $income->source }}</td>
-                                    <td class="right-align">{{ $income->amount }}</td>
+                                    <td>{{ $expense->date->format('d M, Y') }}</td>
+                                    <td>{{ $expense->purpose }}</td>
+                                    <td class="right-align">{{ $expense->amount }}</td>
                                     <td class="center-align">
-                                        {!! status($income->status, TRUE) !!}
+                                        {!! status($expense->status, TRUE) !!}
                                     </td>
-                                    <td class="center-align">{{ $income->updated_at->format('d M, Y h:i A') }}</td>
+                                    <td class="center-align">{{ $expense->updated_at->format('d M, Y h:i A') }}</td>
                                     <td class="center-align delete-wrap">
-                                        <a href="{{ route('income.show', $income->uuid) }}" class="btn-floating btn-small waves-effect waves-light green tooltipped" data-position="top"
+                                        <a href="{{ route('expense.show', $expense->uuid) }}" class="btn-floating btn-small waves-effect waves-light green tooltipped" data-position="top"
                                            data-tooltip="বিস্তারিত দেখুন">
                                             <span class="material-icons">remove_red_eye</span>
                                         </a>
 
-                                        <a href="{{ route('income.edit', $income->uuid) }}" class="btn-floating btn-small waves-effect waves-light cyan tooltipped" data-position="top"
+                                        <a href="{{ route('expense.edit', $expense->uuid) }}" class="btn-floating btn-small waves-effect waves-light cyan tooltipped" data-position="top"
                                            data-tooltip="পরিবর্তন করুন">
                                             <span class="material-icons">edit</span>
                                         </a>
@@ -70,7 +70,7 @@
                                         </a>
 
                                         <div class="delete-form" onclick="jCancelDelete(this)">
-                                            {!! Form::open(['route' => ['income.destroy', $income->uuid], 'method' => 'DELETE']) !!}
+                                            {!! Form::open(['route' => ['expense.destroy', $expense->uuid], 'method' => 'DELETE']) !!}
                                             <h3>আপনি এটি মুছে ফেলতে চাচ্ছেন, আপনি কি নিশ্চিত?</h3>
                                             <button type="submit" class="btn red darken-3" onclick="submit_form(this, event)"><span class="material-icons">delete</span> মুছে ফেলুন</button>
                                             <button type="button" class="btn grey" onclick="jCancelDelete(this)"><span class="material-icons">close</span>বাদ দিন</button>
@@ -81,14 +81,14 @@
                             @endforeach
                         @else
                             <tr>
-                                <td class="center-align" colspan="7">কোনো আয় খুঁজে পাওয়া যায় নাই।</td>
+                                <td class="center-align" colspan="7">কোনো ব্যয় খুঁজে পাওয়া যায় নাই।</td>
                             </tr>
                         @endif
                         </tbody>
                     </table>
                 </div>
                 <div class="card-action center-align">
-                    {{ $incomes->links() }}
+                    {{ $expenses->links() }}
                 </div>
             </div>
         </div>
