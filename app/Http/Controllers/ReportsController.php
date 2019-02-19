@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Expense;
 use App\Income;
+use App\Reports;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -23,11 +24,31 @@ class ReportsController extends Controller
         return view( 'reports.daily-income-expense', compact( 'title', 'incomes', 'expenses' ) );
     }
 
-    public function getDailyIncomeReport( Request $request )
+    public function monthly_income_expense( Request $request )
     {
-        $incomes = new Income();
+        $title = "মাসিক আয় / ব্যায়";
+
+        $reports = '';
 
         if ( $request->s ) {
+            $reports = new Reports();
+            if ( $request->year ) {
+                $reports = $reports->where( 'year', $request->year );
+            }
+            if ( $request->month ) {
+                $reports = $reports->where( 'month', $request->month );
+            }
+            $reports = $reports->orderByDesc( "date" )->get();
+        }
+
+        return view( 'reports.monthly-income-expense', compact( 'title', 'reports' ) );
+    }
+
+    public function getDailyIncomeReport( Request $request )
+    {
+
+        if ( $request->s ) {
+            $incomes = new Income();
             if ( $request->from ) {
                 $from = Carbon::parse( $request->from )->toDateString();
                 $incomes = $incomes->where( 'date', '>=', $from );
@@ -36,16 +57,18 @@ class ReportsController extends Controller
                 $to = Carbon::parse( $request->to )->toDateString();
                 $incomes = $incomes->where( 'date', '<=', $to );
             }
+            $incomes = $incomes->where( 'status', 1 )->orderByDesc( "date" )->get();
+            return $incomes;
         }
-        $incomes = $incomes->where( 'status', 1 )->orderByDesc( "date" )->get();
-        return $incomes;
+
+        return false;
     }
 
     public function getDailyExpanseReport( Request $request )
     {
-        $expenses = new Expense();
-
         if ( $request->s ) {
+            $expenses = new Expense();
+
             if ( $request->from ) {
                 $from = Carbon::parse( $request->from )->toDateString();
                 $expenses = $expenses->where( 'date', '>=', $from );
@@ -54,8 +77,10 @@ class ReportsController extends Controller
                 $to = Carbon::parse( $request->to )->toDateString();
                 $expenses = $expenses->where( 'date', '<=', $to );
             }
+            $expenses = $expenses->where( 'status', 1 )->orderByDesc( "date" )->get();
+            return $expenses;
         }
-        $expenses = $expenses->where( 'status', 1 )->orderByDesc( "date" )->get();
-        return $expenses;
+
+        return false;
     }
 }

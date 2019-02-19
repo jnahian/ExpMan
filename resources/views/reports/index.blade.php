@@ -19,6 +19,11 @@
                         Daily Report
                     </a>
 
+                    <a href="{{ route('report.monthly') }}" class="btn-large light-blue">
+                        <span class="material-icons">assignment</span>
+                        Monthly Report
+                    </a>
+
                 </div>
                 <div class="card-action center-align">
 
