@@ -55,18 +55,18 @@
                     <a href="{{ route('income.index') }}" class="btn-small waves-effect waves-light green tooltipped" data-position="top"
                        data-tooltip="সকল আয় ">
                         <span class="material-icons">list</span>
-                        সকল আয়
+                        <span class="hide-on-small-and-down">সকল আয়</span>
                     </a>
                     <a href="{{ route('income.edit', $income->uuid) }}" class="btn-small waves-effect waves-light cyan tooltipped" data-position="top"
                        data-tooltip="পরিবর্তন করুন">
                         <span class="material-icons">edit</span>
-                        পরিবর্তন করুন
+                        <span class="hide-on-small-and-down">পরিবর্তন করুন</span>
                     </a>
 
                     <a href="javascript:" class="btn-small waves-effect waves-light red tooltipped" data-position="top"
                        data-tooltip="মুছে ফেলুন" onclick="jShowDelete(this)">
                         <span class="material-icons">delete</span>
-                        মুছে ফেলুন
+                        <span class="hide-on-small-and-down">মুছে ফেলুন</span>
                     </a>
 
                     <div class="delete-form" onclick="jCancelDelete(this)">

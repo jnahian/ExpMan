@@ -330,7 +330,7 @@ td, th {
     }
 
     nav .brand-logo {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     .sidenav-overlay {
@@ -355,6 +355,10 @@ td, th {
 
     .welcome {
         margin-top: 20vh;
+    }
+
+    .card-action .btn-small > .material-icons {
+        margin-right: 0;
     }
 }
 
