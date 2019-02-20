@@ -311,7 +311,7 @@ td, th {
 }
 
 .welcome {
-    margin-top: 35vh;
+    margin-top: calc(50vh - 200px);
 }
 
 @media (max-width: 767px) {
