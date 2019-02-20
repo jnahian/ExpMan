@@ -25,7 +25,7 @@
                             <label for="to">তারিখ পর্যন্ত </label>
                         </div>
                         <div class="input-field inline">
-                            <button type="submit" name="s" value="1" class="btn-flat green-text search-btn"><span class="material-icons">search</span></button>
+                            <button type="submit" name="s" value="1" class="btn green"><span class="material-icons">search</span> অনুসন্ধান</button>
                         </div>
                         {!! Form::close() !!}
                     </div>

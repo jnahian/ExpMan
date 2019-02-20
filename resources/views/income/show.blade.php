@@ -11,7 +11,7 @@
                 @include('elements.preloader')
                 <div class="card-content">
                     <div class="card-title">{{ $title }}</div>
-                    <table class="striped responsive-table">
+                    <table class="striped">
                         <tbody>
                         <tr>
                             <th width="20%">তারিখ</th>
