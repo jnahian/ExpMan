@@ -26,7 +26,7 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
-                                <label for="email">ইমেইল এড্রেস:</label>
+                                <label for="email">ইমেইল এড্রেস</label>
                             </div>
                         </div>
 

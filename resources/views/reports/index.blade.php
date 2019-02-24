@@ -9,20 +9,22 @@
 
             <div class="card">
                 @include('elements.preloader')
-                <div class="card-content center-align">
+                <div class="card-content">
                     <div class="card-title">
                         {{ $title }}
                     </div>
 
-                    <a href="{{ route('report.daily') }}" class="btn-large light-blue">
-                        <span class="material-icons">assignment</span>
-                        প্রতিদিনের আয় / ব্যায় রিপোর্ট
-                    </a>
+                    <div class="center-align">
+                        <a href="{{ route('report.daily') }}" class="btn-large light-blue">
+                            <span class="material-icons">assignment</span>
+                            প্রতিদিনের আয় / ব্যায় রিপোর্ট
+                        </a>
 
-                    <a href="{{ route('report.monthly') }}" class="btn-large light-blue">
-                        <span class="material-icons">assignment</span>
-                        মাসিক আয় / ব্যায় রিপোর্ট
-                    </a>
+                        <a href="{{ route('report.monthly') }}" class="btn-large light-blue">
+                            <span class="material-icons">assignment</span>
+                            মাসিক আয় / ব্যায় রিপোর্ট
+                        </a>
+                    </div>
 
                 </div>
                 <div class="card-action center-align">

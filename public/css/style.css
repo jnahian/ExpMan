@@ -307,12 +307,22 @@ td, th {
 
 .card .card-title {
     font-size: 18px;
-    color: #333;
+    color: #343443;
+    position: relative;
 }
 
 .welcome {
-    margin-top: 35vh;
+    margin-top: calc(50vh - 200px);
 }
+
+/*.card .card-title:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    bottom: 0;
+}*/
 
 @media (max-width: 767px) {
     .container {
@@ -345,6 +355,10 @@ td, th {
 
     .welcome {
         margin-top: 20vh;
+    }
+
+    .card-action .btn-small > .material-icons {
+        margin-right: 0;
     }
 }
 
