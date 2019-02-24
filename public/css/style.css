@@ -315,6 +315,10 @@ td, th {
     margin-top: calc(50vh - 200px);
 }
 
+.invalid-feedback {
+    color: #f24500;
+}
+
 /*.card .card-title:before {
     position: absolute;
     content: '';
