@@ -20,11 +20,11 @@
                     <div class="row center-align">
                         {!! Form::open(['route' => 'report.monthly', 'method' => 'GET']) !!}
                         <div class="input-field inline">
-                            {!! Form::select('year', year_list()) !!}
+                            {!! Form::select('year', year_list(), old('year', date('Y'))) !!}
                             <label for="from">সাল </label>
                         </div>
                         <div class="input-field inline">
-                            {!! Form::select('month', month_list()) !!}
+                            {!! Form::select('month', month_list(), old('month', date('n'))) !!}
                             <label for="from">মাস </label>
                         </div>
 
@@ -54,7 +54,7 @@
                                             <td>{{ ($loop->index + 1) }}</td>
                                             <td>{{ $report->date->format('d M, Y') }}</td>
                                             <td>{{ $report->source }}</td>
-                                            <td class="center-align">{!! income_expense($report->type, true) !!}</td>
+                                            <td class="center-align">{!! income_expense($report->type, TRUE) !!}</td>
                                             <td class="right-align">{{ $report->income ? number_format($report->income, 2) : '' }}</td>
                                             <td class="right-align">{{ $report->expense ? number_format($report->expense, 2) : '' }}</td>
                                         </tr>

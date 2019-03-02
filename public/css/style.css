@@ -294,6 +294,9 @@ nav ul li .material-icons {
 td, th {
     padding: 10px 5px;
     font-size: 14px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 
 .report th, .report td {

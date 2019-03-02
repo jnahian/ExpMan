@@ -20,11 +20,11 @@
                     <div class="row center-align">
                         {!! Form::open(['route' => 'report.daily', 'method' => 'GET']) !!}
                         <div class="input-field inline">
-                            <input id="from" name="from" type="text" class="datepicker">
+                            <input id="from" name="from" type="text" value="{{ old('from', date("M 01, Y")) }}" class="datepicker">
                             <label for="from">তারিখ হইতে </label>
                         </div>
                         <div class="input-field inline">
-                            <input id="to" type="text" name="to" class="datepicker">
+                            <input id="to" type="text" name="to" value="{{ old('from', date("M t, Y")) }}" class="datepicker">
                             <label for="to">তারিখ পর্যন্ত </label>
                         </div>
                         <div class="input-field inline">
