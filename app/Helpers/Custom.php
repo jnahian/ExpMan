@@ -1,15 +1,18 @@
 <?php
 
-if ( !function_exists( 'bijoyToAvro' ) ) {
-    function bijoyToAvro( $text = NULL )
+use Carbon\Carbon;
+use MirazMac\BanglaString\BanglaString;
+
+if (!function_exists('bijoyToAvro')) {
+    function bijoyToAvro($text = null)
     {
-        if ( $text ) {
-            $converter = new \MirazMac\BanglaString\BanglaString( $text );
+        if ($text) {
+            $converter = new BanglaString($text);
 
             return $converter->toAvro();
         }
 
-        return FALSE;
+        return false;
     }
 }
 
@@ -17,7 +20,7 @@ if ( !function_exists( 'avroToBijoy' ) ) {
     function avroToBijoy( $text = NULL )
     {
         if ( $text ) {
-            $converter = new \MirazMac\BanglaString\BanglaString( $text );
+            $converter = new BanglaString($text);
 
             return $converter->toBijoy();
         }
@@ -88,11 +91,36 @@ if ( !function_exists( 'month_list' ) ) {
     {
         $months = [ '' => "নির্বাচন করুন" ];
 
-        for ( $i = 1; $i <= 12; $i++ ) {
-            $name = \Carbon\Carbon::createFromFormat( 'm', $i )->format( "F" );
+        for ($i = 1; $i <= 12; $i++) {
+            $name       = Carbon::createFromFormat('m', $i)->format("F");
             $months[$i] = $name;
         }
 
         return $months;
+    }
+}
+
+if (!function_exists('getConstants')) {
+    function getConstants($class)
+    {
+        $oClass = new ReflectionClass($class);
+        return $oClass->getConstants();
+    }
+}
+
+if (!function_exists('getTenors')) {
+    function getTenors()
+    {
+        $data = [
+            '' => 'Select',
+            3  => 3,
+            6  => 6,
+            9  => 9,
+            12 => 12,
+            18 => 18,
+            24 => 24,
+        ];
+
+        return $data;
     }
 }
